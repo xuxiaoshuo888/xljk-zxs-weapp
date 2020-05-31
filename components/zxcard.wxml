@@ -1,0 +1,14 @@
+<!--components/zxcard.wxml-->
+<view class="recd-item" wx:for="{{zxList}}" wx:key="index" wx:for-item="zxListItem">
+			<slot name="title" class="recd-item-title" >{{title}}</slot>
+			<slot name="card" class="recd-item-card">
+        <view class="recd-item-card-content">
+          <view wx:for="{{list.zx}}" class="recd-item-card-content-text" bindtap="toZxDetail">
+            <view class="content-text-left">{{item.name}}</view>
+            <view class="content-text-center">{{item.when}}</view>
+            <view class="content-text-right">操作 <van-icon name="arrow" class="content-right-icon" /> </view>
+          </view>
+        </view>
+      </slot>
+		</view>
+

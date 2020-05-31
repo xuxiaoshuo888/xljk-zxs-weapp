@@ -1,0 +1,67 @@
+{
+  "pages": [
+    "pages/zx/zxDetail",
+    "pages/zx/zx",
+    "pages/pb/pb",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/me/me"
+  ],
+  "usingComponents": {
+    "van-cell": "./miniprogram_npm/@vant/weapp/cell/index",
+    "van-cell-group": "./miniprogram_npm/@vant/weapp/cell-group/index",
+    "van-nav-bar": "./miniprogram_npm/@vant/weapp/nav-bar/index",
+    "van-button": "./miniprogram_npm/@vant/weapp/button/index",
+    "van-checkbox": "./miniprogram_npm/@vant/weapp/checkbox/index",
+    "van-checkbox-group": "./miniprogram_npm/@vant/weapp/checkbox-group/index",
+    "van-radio": "./miniprogram_npm/@vant/weapp/radio/index",
+    "van-radio-group": "./miniprogram_npm/@vant/weapp/radio-group/index",
+    "van-submit-bar": "./miniprogram_npm/@vant/weapp/submit-bar/index",
+    "van-field": "./miniprogram_npm/@vant/weapp/field/index",
+    "van-tag": "./miniprogram_npm/@vant/weapp/tag/index",
+    "van-tab": "./miniprogram_npm/@vant/weapp/tab/index",
+    "van-tabs": "./miniprogram_npm/@vant/weapp/tabs/index",
+    "van-index-bar": "./miniprogram_npm/@vant/weapp/index-bar/index",
+    "van-index-anchor": "./miniprogram_npm/@vant/weapp/index-anchor/index",
+    "van-notice-bar": "./miniprogram_npm/@vant/weapp/notice-bar/index",
+    "van-stepper": "./miniprogram_npm/@vant/weapp/stepper/index",
+    "van-row": "./miniprogram_npm/@vant/weapp/row/index",
+    "van-col": "./miniprogram_npm/@vant/weapp/col/index",
+    "van-icon": "./miniprogram_npm/@vant/weapp/icon/index",
+    "van-popup": "./miniprogram_npm/@vant/weapp/popup/index",
+    "van-swipe-cell": "./miniprogram_npm/@vant/weapp/swipe-cell/index",
+    "van-search": "./miniprogram_npm/@vant/weapp/search/index",
+    "van-collapse": "./miniprogram_npm/@vant/weapp/collapse/index",
+    "van-collapse-item": "./miniprogram_npm/@vant/weapp/collapse-item/index"
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "心理健康",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#32B67A",
+    "list": [
+      {
+        "pagePath": "pages/pb/pb",
+        "text": "排班",
+        "iconPath": "images/pb.png",
+        "selectedIconPath": "images/pb-s.png"
+      },
+      {
+        "pagePath": "pages/zx/zx",
+        "text": "咨询",
+        "iconPath": "images/zx.png",
+        "selectedIconPath": "images/zx-s.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "images/me.png",
+        "selectedIconPath": "images/me-s.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

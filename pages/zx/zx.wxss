@@ -1,0 +1,4 @@
+/* pages/zx/zx.wxss */
+.van-tab__pane{
+  padding:40rpx;
+}

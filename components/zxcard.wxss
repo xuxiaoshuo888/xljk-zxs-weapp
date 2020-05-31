@@ -1,0 +1,51 @@
+/* components/zxcard.wxss */
+.recd-item {
+  margin-bottom:40rpx;
+}
+.recd-item-title{
+  font-size: 32rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  color: rgba(59, 72, 89, 1);
+  font-weight: 700;
+  line-height: 22px;
+  margin-bottom: 20rpx;
+}
+.recd-item-card{
+  box-shadow:0px 3px 10px 0px rgba(197,201,213,0.25);
+  border-radius:14px;
+  padding: 32rpx 0;
+}
+.recd-item-card-content{
+  border-left: 2px solid #F16548;
+}
+.recd-item-card-content>.recd-item-card-content-text:last-child{
+  margin-bottom: 0;
+}
+.recd-item-card-content-text{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size:28rpx;
+  font-family:PingFangSC-Regular,PingFang SC;
+  color:rgba(90,97,124,1);
+  line-height:20px;
+  padding: 0 40rpx;
+  margin-bottom: 20rpx;
+}
+.content-text-left{
+  flex: 0 0 120rpx;
+  
+}
+.content-text-center{
+  /* flex: 1 1 auto; */
+}
+.content-text-right{
+  /* flex: 0 0 90rpx; */
+  font-family:PingFangSC-Regular,PingFang SC;
+  color:rgba(137,152,172,1);
+  text-align: right;
+}
+.content-right-icon{
+  vertical-align:middle;
+}
