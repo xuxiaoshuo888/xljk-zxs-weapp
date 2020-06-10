@@ -1,204 +1,280 @@
 <!--pages/zx/zxDetail.wxml-->
 <!--pages/zx/zx.wxml-->
 <van-tabs active="{{ tabIndex }}" bind:change="onChange" color="#32B67A" sticky>
-	<van-tab title="基本信息">
-		<view class="info-band info-font info-top">
-			<image src="/images/info-bg.png" mode="aspectFit" class="info-img"></image>
-			<view class="info-item">
-				<view class="info-item-left">学号：</view>
-				<view class="info-item-right">U20190300101</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">姓名：</view>
-				<view class="info-item-right">张三</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">咨询次数数：</view>
-				<view class="info-item-right">8</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">咨询师：</view>
-				<view class="info-item-right">雷光辉</view>
-			</view>
-		</view>
-		<view class="info-band info-font">
-			<view class="recd-item-title">更多信息</view>
-			<view class="info-item">
-				<view class="info-item-left">性别：</view>
-				<view class="info-item-right">女</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">出生日期：</view>
-				<view class="info-item-right">2020-05-20</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">年级：</view>
-				<view class="info-item-right">2019</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">院系：</view>
-				<view class="info-item-right">土木工程学院</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">院系：</view>
-				<view class="info-item-right">土木工程学院</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">院系：</view>
-				<view class="info-item-right">土木工程学院</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">院系：</view>
-				<view class="info-item-right">土木工程学院</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">院系：</view>
-				<view class="info-item-right">土木工程学院</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">院系：</view>
-				<view class="info-item-right">土木工程学院</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">院系：</view>
-				<view class="info-item-right">土木工程学院</view>
-			</view>
-		</view>
-	</van-tab>
-	<van-tab title="预约单">
-		<view class="info-band info-font info-top">
-			<image src="/images/info-bg.png" mode="aspectFit" class="info-img"></image>
-			<view class="info-item">
-				<view class="info-item-left">学号：</view>
-				<view class="info-item-right">U20190300101</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">姓名：</view>
-				<view class="info-item-right">张三</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">咨询次数数：</view>
-				<view class="info-item-right">8</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">咨询师：</view>
-				<view class="info-item-right">雷光辉</view>
-			</view>
-		</view>
-		<view class="info-band info-font">
-			<view class="recd-item-title">更多信息</view>
-			<view class="info-item">
-				<view class="info-item-left">性别：</view>
-				<view class="info-item-right">女</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">出生日期：</view>
-				<view class="info-item-right">2020-05-20</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">年级：</view>
-				<view class="info-item-right">2019</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">院系：</view>
-				<view class="info-item-right">土木工程学院</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">院系：</view>
-				<view class="info-item-right">土木工程学院</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">院系：</view>
-				<view class="info-item-right">土木工程学院</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">院系：</view>
-				<view class="info-item-right">土木工程学院</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">院系：</view>
-				<view class="info-item-right">土木工程学院</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">院系：</view>
-				<view class="info-item-right">土木工程学院</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">院系：</view>
-				<view class="info-item-right">土木工程学院</view>
-			</view>
-		</view>
-	</van-tab>
-	<van-tab title="测评问卷">
-		<view class="info-band info-font info-top">
-			<image src="/images/info-bg.png" mode="aspectFit" class="info-img"></image>
-			<view class="info-item">
-				<view class="info-item-left">学号：</view>
-				<view class="info-item-right">U20190300101</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">姓名：</view>
-				<view class="info-item-right">张三</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">咨询次数数：</view>
-				<view class="info-item-right">8</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">咨询师：</view>
-				<view class="info-item-right">雷光辉</view>
-			</view>
-		</view>
-		<view class="record-card info-band">
-			<view class="record-cardview {{openFlag === true ? 'open' : ''}}" >
-				<view class="cardview-head" bindtap="toggleCard">
-					<view>自评记录</view>
-					<van-icon name="arrow-down" class="card-head-icon {{openFlag === true ? 'rotate90' : ''}}" />
-				</view>
-				<view class="cardview-body">
-					<view class="cardview-body-content">
-						<view class="cardview-body-content-head">
-							<view class="cardview-body-content-head-left">2020-05-12 8:00 SCL-90量表</view>
-							<view class="cardview-body-content-head-right"><text>答题详情</text>
-								<van-icon name="arrow" class="cardview-body-content-head-right-icon" />
-							</view>
-						</view>
-						<view class="cardview-body-content-body">
-							<view>测评结论：Donec accumsan porttitor velit non venenatis. Praesent vehicula convallis nisl non aliquet. Curabitur viverra nulla nec pulvinar volutpat. Etiam quis nisl augue. Sed fermentum mattis malesuada. Praesent congue blandit metus</view>
-						</view>
-					</view>
+  <van-tab title="基本信息">
+    <view class="info-band info-font info-top">
+      <image src="/images/info-bg.png" mode="aspectFit" class="info-img"></image>
+      <view class="info-item">
+        <view class="info-item-left">学号：</view>
+        <view class="info-item-right">U20190300101</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">姓名：</view>
+        <view class="info-item-right">张三</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">咨询次数数：</view>
+        <view class="info-item-right">8</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">咨询师：</view>
+        <view class="info-item-right">雷光辉</view>
+      </view>
+    </view>
+    <view class="info-band info-font">
+      <view class="recd-item-title">更多信息</view>
+      <view class="info-item">
+        <view class="info-item-left">性别：</view>
+        <view class="info-item-right">女</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">出生日期：</view>
+        <view class="info-item-right">2020-05-20</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">年级：</view>
+        <view class="info-item-right">2019</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">院系：</view>
+        <view class="info-item-right">土木工程学院</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">院系：</view>
+        <view class="info-item-right">土木工程学院</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">院系：</view>
+        <view class="info-item-right">土木工程学院</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">院系：</view>
+        <view class="info-item-right">土木工程学院</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">院系：</view>
+        <view class="info-item-right">土木工程学院</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">院系：</view>
+        <view class="info-item-right">土木工程学院</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">院系：</view>
+        <view class="info-item-right">土木工程学院</view>
+      </view>
+    </view>
+  </van-tab>
+  <van-tab title="预约单">
+    <view class="info-band info-font info-top">
+      <image src="/images/info-bg.png" mode="aspectFit" class="info-img"></image>
+      <view class="info-item">
+        <view class="info-item-left">学号：</view>
+        <view class="info-item-right">U20190300101</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">姓名：</view>
+        <view class="info-item-right">张三</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">咨询次数数：</view>
+        <view class="info-item-right">8</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">咨询师：</view>
+        <view class="info-item-right">雷光辉</view>
+      </view>
+    </view>
+    <view class="info-band info-font">
+      <view class="recd-item-title">更多信息</view>
+      <view class="info-item">
+        <view class="info-item-left">性别：</view>
+        <view class="info-item-right">女</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">出生日期：</view>
+        <view class="info-item-right">2020-05-20</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">年级：</view>
+        <view class="info-item-right">2019</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">院系：</view>
+        <view class="info-item-right">土木工程学院</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">院系：</view>
+        <view class="info-item-right">土木工程学院</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">院系：</view>
+        <view class="info-item-right">土木工程学院</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">院系：</view>
+        <view class="info-item-right">土木工程学院</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">院系：</view>
+        <view class="info-item-right">土木工程学院</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">院系：</view>
+        <view class="info-item-right">土木工程学院</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">院系：</view>
+        <view class="info-item-right">土木工程学院</view>
+      </view>
+    </view>
+  </van-tab>
+  <van-tab title="测评问卷">
+    <view class="info-band info-font info-top">
+      <image src="/images/info-bg.png" mode="aspectFit" class="info-img"></image>
+      <view class="info-item">
+        <view class="info-item-left">学号：</view>
+        <view class="info-item-right">U20190300101</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">姓名：</view>
+        <view class="info-item-right">张三</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">咨询次数数：</view>
+        <view class="info-item-right">8</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">咨询师：</view>
+        <view class="info-item-right">雷光辉</view>
+      </view>
+    </view>
+    <view class="record-card info-band">
+      <view class="record-cardview {{openFlag === true ? 'open' : ''}}">
+        <view class="cardview-head" bindtap="toggleCard">
+          <view>自评记录</view>
+          <van-icon name="arrow-down" class="card-head-icon {{openFlag === true ? 'rotate90' : ''}}" />
+        </view>
+        <view class="cardview-body">
+          <view class="cardview-body-content">
+            <view class="cardview-body-content-head">
+              <view class="cardview-body-content-head-left">2020-05-12 8:00 SCL-90量表</view>
+              <view class="cardview-body-content-head-right">
+                <text>答题详情</text>
+                <van-icon name="arrow" class="cardview-body-content-head-right-icon" />
+              </view>
+            </view>
+            <view class="cardview-body-content-body">
+              <view>测评结论：Donec accumsan porttitor velit non venenatis. Praesent vehicula convallis nisl non aliquet. Curabitur viverra nulla nec pulvinar volutpat. Etiam quis nisl augue. Sed fermentum mattis malesuada. Praesent congue blandit metus</view>
+            </view>
+          </view>
 
-					<view class="cardview-body-content">
-						<view class="cardview-body-content-head">
-							<view class="cardview-body-content-head-left">2020-05-12 8:00 SCL-90量表</view>
-							<view class="cardview-body-content-head-right"><text>答题详情</text>
-								<van-icon name="arrow" class="cardview-body-content-head-right-icon" />
-							</view>
-						</view>
-						<view class="cardview-body-content-body">
-							<view>测评结论：Donec accumsan porttitor velit non venenatis. Praesent vehicula convallis nisl non aliquet. Curabitur viverra nulla nec pulvinar volutpat. Etiam quis nisl augue. Sed fermentum mattis malesuada. Praesent congue blandit metus</view>
-						</view>
-					</view>
+          <view class="cardview-body-content">
+            <view class="cardview-body-content-head">
+              <view class="cardview-body-content-head-left">2020-05-12 8:00 SCL-90量表</view>
+              <view class="cardview-body-content-head-right">
+                <text>答题详情</text>
+                <van-icon name="arrow" class="cardview-body-content-head-right-icon" />
+              </view>
+            </view>
+            <view class="cardview-body-content-body">
+              <view>测评结论：Donec accumsan porttitor velit non venenatis. Praesent vehicula convallis nisl non aliquet. Curabitur viverra nulla nec pulvinar volutpat. Etiam quis nisl augue. Sed fermentum mattis malesuada. Praesent congue blandit metus</view>
+            </view>
+          </view>
 
-					<view class="cardview-body-content">
-						<view class="cardview-body-content-head">
-							<view class="cardview-body-content-head-left">2020-05-12 8:00 SCL-90量表</view>
-							<view class="cardview-body-content-head-right"><text>答题详情</text>
-								<van-icon name="arrow" class="cardview-body-content-head-right-icon" />
-							</view>
-						</view>
-						<view class="cardview-body-content-body">
-							<view>测评结论：Donec accumsan porttitor velit non venenatis. Praesent vehicula convallis nisl non aliquet. Curabitur viverra nulla nec pulvinar volutpat. Etiam quis nisl augue. Sed fermentum mattis malesuada. Praesent congue blandit metus</view>
-						</view>
-					</view>
-				</view>
-			</view>
-		</view>
-		<view class="btn-view posi-fixed-bottom">
-			<button size="large" type="grey">评估</button>
-			<button size="large" type="theme">评估</button>
-		</view>
-		<view style="padding-top:100px;"></view>
-	</van-tab>
-	<van-tab title="咨询记录">内容 4</van-tab>
+          <view class="cardview-body-content">
+            <view class="cardview-body-content-head">
+              <view class="cardview-body-content-head-left">2020-05-12 8:00 SCL-90量表</view>
+              <view class="cardview-body-content-head-right">
+                <text>答题详情</text>
+                <van-icon name="arrow" class="cardview-body-content-head-right-icon" />
+              </view>
+            </view>
+            <view class="cardview-body-content-body">
+              <view>测评结论：Donec accumsan porttitor velit non venenatis. Praesent vehicula convallis nisl non aliquet. Curabitur viverra nulla nec pulvinar volutpat. Etiam quis nisl augue. Sed fermentum mattis malesuada. Praesent congue blandit metus</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="btn-view posi-fixed-bottom">
+      <button size="large" type="grey">评估</button>
+      <button size="large" type="theme">推送自评</button>
+    </view>
+    <view style="padding-top:100px;"></view>
+  </van-tab>
+  <van-tab title="咨询记录">
+    <view class="info-band info-font info-top">
+      <image src="/images/info-bg.png" mode="aspectFit" class="info-img"></image>
+      <view class="info-item">
+        <view class="info-item-left">学号：</view>
+        <view class="info-item-right">U20190300101</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">姓名：</view>
+        <view class="info-item-right">张三</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">咨询次数数：</view>
+        <view class="info-item-right">8</view>
+      </view>
+      <view class="info-item">
+        <view class="info-item-left">咨询师：</view>
+        <view class="info-item-right">雷光辉</view>
+      </view>
+    </view>
+    <view class="record-card info-band">
+      <view class="record-cardview {{openFlag === true ? 'open' : ''}}">
+        <view class="cardview-head" bindtap="toggleCard">
+          <view>自评记录</view>
+          <van-icon name="arrow-down" class="card-head-icon {{openFlag === true ? 'rotate90' : ''}}" />
+        </view>
+        <view class="cardview-body">
+          <view class="cardview-body-content">
+            <view class="cardview-body-content-head">
+              <view class="cardview-body-content-head-left">2020-05-12 8:00 SCL-90量表</view>
+              <view class="cardview-body-content-head-right">
+                <text>答题详情</text>
+                <van-icon name="arrow" class="cardview-body-content-head-right-icon" />
+              </view>
+            </view>
+            <view class="cardview-body-content-body">
+              <view>测评结论：Donec accumsan porttitor velit non venenatis. Praesent vehicula convallis nisl non aliquet. Curabitur viverra nulla nec pulvinar volutpat. Etiam quis nisl augue. Sed fermentum mattis malesuada. Praesent congue blandit metus</view>
+            </view>
+          </view>
+
+          <view class="cardview-body-content">
+            <view class="cardview-body-content-head">
+              <view class="cardview-body-content-head-left">2020-05-12 8:00 SCL-90量表</view>
+              <view class="cardview-body-content-head-right">
+                <text>答题详情</text>
+                <van-icon name="arrow" class="cardview-body-content-head-right-icon" />
+              </view>
+            </view>
+            <view class="cardview-body-content-body">
+              <view>测评结论：Donec accumsan porttitor velit non venenatis. Praesent vehicula convallis nisl non aliquet. Curabitur viverra nulla nec pulvinar volutpat. Etiam quis nisl augue. Sed fermentum mattis malesuada. Praesent congue blandit metus</view>
+            </view>
+          </view>
+
+          <view class="cardview-body-content">
+            <view class="cardview-body-content-head">
+              <view class="cardview-body-content-head-left">2020-05-12 8:00 SCL-90量表</view>
+              <view class="cardview-body-content-head-right">
+                <text>答题详情</text>
+                <van-icon name="arrow" class="cardview-body-content-head-right-icon" />
+              </view>
+            </view>
+            <view class="cardview-body-content-body">
+              <view>测评结论：Donec accumsan porttitor velit non venenatis. Praesent vehicula convallis nisl non aliquet. Curabitur viverra nulla nec pulvinar volutpat. Etiam quis nisl augue. Sed fermentum mattis malesuada. Praesent congue blandit metus</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="btn-view posi-fixed-bottom">
+      <button size="large" type="grey">缓存</button>
+      <button size="large" type="theme">提交</button>
+    </view>
+    <view style="padding-top:100px;"></view>
+  </van-tab>
 </van-tabs>

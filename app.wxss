@@ -4,7 +4,7 @@ page {
 }
 
 .van-tab--active>.van-ellipsis {
-  font-size: 36rpx;
+  font-size: 30rpx;
   color: rgba(59, 72, 89, 1);
   font-weight: 700;
 
