@@ -8,8 +8,8 @@ Page({
   data: {
     // username: "2016121119000451",
     // password: "Sibe2016",
-    username: "",
-    password: "",
+    username: "chengye",
+    password: "Ssibe2016",
     pwdFocus: false,
     userFocus: true,
     opneId: ''
@@ -131,25 +131,23 @@ Page({
       mask: true
     })
     wx.request({
-      url: `${app.globalData.serverPath}/api/user/login`,
+      url: `${app.globalData.serverPath}/api/consultant/login`,
       method: 'POST',
-      header: app.getHeader2(),
+      header: app.getHeader(),
       data: {
         username: _this.data.username,
         password: _this.data.password,
-        openId: _this.data.opneId
+        openid: _this.data.opneId
       },
-      header: app.getHeader(),
       success(res) {
         console.log(res)
         wx.hideLoading()
         if (res.data.errcode == '0') {//登录成功-home
-          app.globalData.token = res.data.token
-          app.globalData.roles = res.data.roles
-          app.globalData.role = res.data.role
-          app.globalData.user = res.data.userInfo
+          app.globalData.token = res.data.user.token
+          app.globalData.openId = res.data.user.openid
+          app.globalData.student = res.data.user.user
           wx.switchTab({
-            url: '/pages/txl/txl',
+            url: '/pages/pb/pb',
           })
         } else {//提示错误信息
           wx.showToast({

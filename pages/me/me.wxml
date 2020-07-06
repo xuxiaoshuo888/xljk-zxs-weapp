@@ -1,2 +1,30 @@
 <!--pages/me/me.wxml-->
-<text>pages/me/me.wxml</text>
+<view>
+	<!-- <button bindtap="unbind">解绑</button> -->
+	<view class="potrait">
+		<!-- <image class="potrait-img" src="${ctx}/static/images/weixinNew/tx.png"></image> -->
+    <open-data class="potrait-img" type="userAvatarUrl"></open-data>
+		<view class="potrait-text">
+			<view class="name">{{student.truename}}</view>
+			<view class="xh">{{student.sex == '1' ? '男' : ''}} {{student.sex == '2' ? '女' : ''}} </view>
+		</view>
+	</view>
+	<view class="my">
+		<view class="my-view">
+			<image class="my-view-img" src="/images/my-cp.png"></image><text>个人简介</text>
+		</view>
+		<!-- <view class="my-view" v-for="i in myList" @click="meToDetail(i)">
+                <image class="my-view-img" :src="'${ctx}/static/images/weixinNew/' + i.img"></image>{{i.text}}
+            </view> -->
+	</view>
+	<view class="my">
+		<view class="my-view">
+			<image class="my-view-img" src="/images/my-cp.png"></image><text>我的咨询</text>
+		</view>
+	</view>
+	<view class="my">
+		<view class="my-view">
+			<image class="my-view-img" src="/images/my-cp.png"></image><text>我的排班</text>
+		</view>
+	</view>
+</view>

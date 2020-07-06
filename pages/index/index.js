@@ -1,54 +1,59 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+
   },
   onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
+    wx.login({
+      success: res => {
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        // 1、 已绑定， 拿后台返回的token， 存， 忽略登录页， 跳转到主页
+        // 2、 未绑定， 拿后台返回的openId， 去登录页做绑定
+        console.log(`code is ${res.code}`)
+        wx.request({
+          url: `${app.globalData.serverPath}/api/consultant/wxLogin`,
+          data: {
+            code: res.code
+          },
+          header: app.getHeader(),
+          success(res) {
+            if (res.data.errcode === '1') { //未绑定，跳转到登录页
+              app.globalData.openId = res.data.openid
+              wx.setStorage({
+                key: "openId",
+                data: res.data.openid
+              })
+              wx.redirectTo({
+                url: '/pages/login/login',
+              })
+            } else if (res.data.errcode === '0') {//已绑定，直接进入主界面
+              app.globalData.token = res.data.appUserInfo.token
+              app.globalData.openId = res.data.openid
+              app.globalData.student = res.data.appUserInfo.user
+              app.globalData.token = res.data.appUserInfo.token
+              wx.setStorage({
+                key: "openId",
+                data: res.data.openid
+              })
+              wx.switchTab({
+                url: '/pages/pb/pb',
+              })
+            } else {
+              wx.showToast({
+                icon: 'none',
+                title: res.data.errmsg,
+              })
+            }
+          },
+          fail(res) {
+            wx.showToast({
+              title: JSON.stringify(res)
+            })
+          }
         })
       }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
     })
   }
 })

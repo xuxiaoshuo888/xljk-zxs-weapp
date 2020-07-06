@@ -1,148 +1,32 @@
 <!--pages/zx/zx.wxml-->
 <van-search value="{{ searchValue }}" shape="round" background="#fff" placeholder="学号/姓名"/>
 <van-tabs active="{{ tabIndex }}" bind:change="onChange" color="#32B67A" sticky>
-	<van-tab title="最新预约">
-		<view class="recd-item" wx:for="{{zxList}}" wx:key="index" wx:for-item="zxListItem">
-			<view class="recd-item-title">
-				{{zxListItem.title}}
-			</view>
+	<van-tab title="未填写">
+		<view class="recd-item" wx:for="{{list_wtx}}" wx:key="index" wx:for-item="item">
 			<view class="recd-item-card">
         <view class="recd-item-card-content">
-          <view wx:for="{{zxListItem.zx}}" class="recd-item-card-content-text" bindtap="toZxDetail">
-            <view class="content-text-left">{{item.name}}</view>
-            <view class="content-text-center">{{item.when}}</view>
-            <view class="content-text-right">操作 <van-icon name="arrow" class="content-right-icon" /> </view>
-          </view>
-        </view>
-      </view>
-		</view>
-
-    <view class="recd-item">
-			<view class="recd-item-title">
-				分诊
-			</view>
-			<view class="recd-item-card">
-        <view class="recd-item-card-content">
-          <view class="recd-item-card-content-text">
-            <view class="content-text-left">张琳张琳</view>
-            <view class="content-text-center">2020-05-12  09:00-10:00</view>
-            <view class="content-text-right">操作 <van-icon name="arrow" class="content-right-icon" /> </view>
-          </view>
-          <view class="recd-item-card-content-text">
-            <view class="content-text-left">张琳张</view>
-            <view class="content-text-center">2020-05-12  09:00-10:00</view>
-            <view class="content-text-right">操作 <van-icon name="arrow" class="content-right-icon" /> </view>
-          </view>
-          <view class="recd-item-card-content-text">
-            <view class="content-text-left">张琳琳</view>
-            <view class="content-text-center">2020-05-12  09:00-10:00</view>
-            <view class="content-text-right">操作 <van-icon name="arrow" class="content-right-icon" /> </view>
-          </view>
-        </view>
-      </view>
-		</view>
-
-    <view class="recd-item">
-			<view class="recd-item-title">
-				团体咨询
-			</view>
-			<view class="recd-item-card">
-        <view class="recd-item-card-content">
-          <view class="recd-item-card-content-text">
-            <view class="content-text-left">张琳张琳</view>
-            <view class="content-text-center">2020-05-12  09:00-10:00</view>
-            <view class="content-text-right">操作 <van-icon name="arrow" class="content-right-icon" /> </view>
-          </view>
-          <view class="recd-item-card-content-text">
-            <view class="content-text-left">张琳张</view>
-            <view class="content-text-center">2020-05-12  09:00-10:00</view>
-            <view class="content-text-right">操作 <van-icon name="arrow" class="content-right-icon" /> </view>
-          </view>
-          <view class="recd-item-card-content-text">
-            <view class="content-text-left">张琳琳</view>
-            <view class="content-text-center">2020-05-12  09:00-10:00</view>
-            <view class="content-text-right">操作 <van-icon name="arrow" class="content-right-icon" /> </view>
-          </view>
-        </view>
-      </view>
-		</view>
-
-    <view class="recd-item">
-			<view class="recd-item-title">
-				个体咨询
-			</view>
-			<view class="recd-item-card">
-        <view class="recd-item-card-content">
-          <view class="recd-item-card-content-text">
-            <view class="content-text-left">张琳张琳</view>
-            <view class="content-text-center">2020-05-12  09:00-10:00</view>
-            <view class="content-text-right">操作 <van-icon name="arrow" class="content-right-icon" /> </view>
-          </view>
-          <view class="recd-item-card-content-text">
-            <view class="content-text-left">张琳张</view>
-            <view class="content-text-center">2020-05-12  09:00-10:00</view>
-            <view class="content-text-right">操作 <van-icon name="arrow" class="content-right-icon" /> </view>
-          </view>
-          <view class="recd-item-card-content-text">
-            <view class="content-text-left">张琳琳</view>
-            <view class="content-text-center">2020-05-12  09:00-10:00</view>
-            <view class="content-text-right">操作 <van-icon name="arrow" class="content-right-icon" /> </view>
-          </view>
-        </view>
-      </view>
-		</view>
-
-    <view class="recd-item">
-			<view class="recd-item-title">
-				分诊
-			</view>
-			<view class="recd-item-card">
-        <view class="recd-item-card-content">
-          <view class="recd-item-card-content-text">
-            <view class="content-text-left">张琳张琳</view>
-            <view class="content-text-center">2020-05-12  09:00-10:00</view>
-            <view class="content-text-right">操作 <van-icon name="arrow" class="content-right-icon" /> </view>
-          </view>
-          <view class="recd-item-card-content-text">
-            <view class="content-text-left">张琳张</view>
-            <view class="content-text-center">2020-05-12  09:00-10:00</view>
-            <view class="content-text-right">操作 <van-icon name="arrow" class="content-right-icon" /> </view>
-          </view>
-          <view class="recd-item-card-content-text">
-            <view class="content-text-left">张琳琳</view>
-            <view class="content-text-center">2020-05-12  09:00-10:00</view>
-            <view class="content-text-right">操作 <van-icon name="arrow" class="content-right-icon" /> </view>
-          </view>
-        </view>
-      </view>
-		</view>
-
-    <view class="recd-item">
-			<view class="recd-item-title">
-				团体咨询
-			</view>
-			<view class="recd-item-card">
-        <view class="recd-item-card-content">
-          <view class="recd-item-card-content-text">
-            <view class="content-text-left">张琳张琳</view>
-            <view class="content-text-center">2020-05-12  09:00-10:00</view>
-            <view class="content-text-right">操作 <van-icon name="arrow" class="content-right-icon" /> </view>
-          </view>
-          <view class="recd-item-card-content-text">
-            <view class="content-text-left">张琳张</view>
-            <view class="content-text-center">2020-05-12  09:00-10:00</view>
-            <view class="content-text-right">操作 <van-icon name="arrow" class="content-right-icon" /> </view>
-          </view>
-          <view class="recd-item-card-content-text">
-            <view class="content-text-left">张琳琳</view>
-            <view class="content-text-center">2020-05-12  09:00-10:00</view>
-            <view class="content-text-right">操作 <van-icon name="arrow" class="content-right-icon" /> </view>
+          <view class="recd-item-card-content-text" data-id="{{item.id}}" bindtap="toZxDetail">
+            <view class="content-text-left">{{item.xm}}</view>
+            <view class="content-text-center">{{item.rq}} {{item.starttime}}~{{item.endtime}}</view>
+            <view class="content-text-right">操作 <van-icon name="arrow" class="content-right-icon"/></view>
           </view>
         </view>
       </view>
 		</view>
 	</van-tab>
-	<van-tab title="已咨询">内容 2</van-tab>
-	<van-tab title="已记录">内容 3</van-tab>
+	<van-tab title="已填写">
+    <view class="recd-item" wx:for="{{list_ytx}}" wx:key="index" wx:for-item="item">
+			<view class="recd-item-card">
+        <view class="recd-item-card-content">
+          <view class="recd-item-card-content-text" data-id="{{item.id}}" bindtap="toZxDetail">
+            <view class="content-text-left">{{item.xm}}</view>
+            <view class="content-text-center">{{item.rq}} {{item.starttime}}~{{item.endtime}}</view>
+            <view class="content-text-right">操作 <van-icon name="arrow" class="content-right-icon"/></view>
+          </view>
+        </view>
+      </view>
+		</view>
+  </van-tab>
+	<van-tab title="未结案">内容 3</van-tab>
 	<van-tab title="已结案">内容 4</van-tab>
 </van-tabs>

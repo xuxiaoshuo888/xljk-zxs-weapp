@@ -1,4 +1,5 @@
 // pages/zx/zx.js
+const app = getApp()
 Page({
 
   /**
@@ -7,40 +8,13 @@ Page({
   data: {
     tabIndex:0,//tab激活index
     searchValue:'',//搜索字段
-    zxList:[
-      {
-        title:'个体咨询',
-        zx:[
-          {name:'上官侯成',when:'2020-05-12  09:00-10:00'},
-          {name:'张三丰',when:'2020-05-12  09:00-10:00'},
-          {name:'张三',when:'2020-05-12  09:00-10:00'},
-          {name:'张三',when:'2020-05-12  09:00-10:00'},
-          {name:'张三',when:'2020-05-12  09:00-10:00'},
-        ]
-      },
-      {
-        title:'分诊',
-        zx:[
-          {name:'上官侯成',when:'2020-05-12  09:00-10:00'},
-          {name:'张三丰',when:'2020-05-12  09:00-10:00'},
-          {name:'张三',when:'2020-05-12  09:00-10:00'},
-          {name:'张三',when:'2020-05-12  09:00-10:00'},
-          {name:'张三',when:'2020-05-12  09:00-10:00'},
-        ]
-      },
-      {
-        title:'团体咨询',
-        zx:[
-          {name:'上官侯成',when:'2020-05-12  09:00-10:00'},
-          {name:'张三丰',when:'2020-05-12  09:00-10:00'},
-          {name:'张三',when:'2020-05-12  09:00-10:00'},
-          {name:'张三',when:'2020-05-12  09:00-10:00'},
-          {name:'张三',when:'2020-05-12  09:00-10:00'},
-        ]
-      },
-    ]
-    
-      
+    list_wtx:[],
+    list_ytx:[],
+    list_wja:[],
+    list_yja:[],
+    page:null,
+    pageSize:null,
+    records:null,  
   },
 
   /**
@@ -61,7 +35,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getData()
   },
 
   /**
@@ -98,9 +72,54 @@ Page({
   onShareAppMessage: function () {
 
   },
-  toZxDetail(){
+  toZxDetail(e){
+    let id=e.currentTarget.dataset.id
     wx.navigateTo({
-      url: './zxDetail',
+      url: `./zxDetail?id=${id}`,
+    })
+  },
+  getData(){
+    let _this = this
+    wx.showLoading({
+      title: '加载中...',
+    })
+    wx.request({
+      url: `${app.globalData.serverPath}/api/consultant/getRecordList`,
+      header: app.getHeaderWithToken(),
+      success(res) {
+        wx.hideLoading()
+        let list_ytx=[];
+        let list_wtx=[];
+        if (res.data.errcode === '0') {
+          if(res.data.page.rows.length>0){
+            res.data.page.rows.forEach((item)=>{
+                if(item.status=='1'){//未填写
+                  list_wtx.push(item)
+                }else if(item.status=='2'){//已填写
+                  list_ytx.push(item)
+                }
+            })
+          }
+          _this.setData({
+            list_ytx:list_ytx,
+            list_wtx:list_wtx,
+            page:res.data.page.page,
+            pageSize:res.data.page.pageSize,
+            records:res.data.page.records
+          })
+        } else {
+          wx.showToast({
+            icon: 'none',
+            title: res.data.errmsg,
+          })
+        }
+      },
+      fail(res) {
+        wx.hideLoading()
+        wx.showToast({
+          title: JSON.stringify(res)
+        })
+      }
     })
   }
 })

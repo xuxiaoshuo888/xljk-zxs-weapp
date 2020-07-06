@@ -30,7 +30,7 @@ page {
 }
 
 .recd-item-card-content {
-  border-left: 2px solid #F16548;
+  border-left: 2px solid #32B67A;
 }
 
 .recd-item-card-content>.recd-item-card-content-text:last-child {

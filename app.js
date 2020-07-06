@@ -7,9 +7,11 @@ App({
     wx.setStorageSync('logs', logs)
 
     // 登录
+    //判断用户是否登陆过，
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        
       }
     })
     // 获取用户信息
@@ -34,6 +36,20 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    openId:null,
+    token:null,
+    student:null,
+    serverPath: 'http://192.168.0.121:8080/xljk',//测试地址
+  },
+  getHeader(){
+    return {
+      'content-type': 'application/x-www-form-urlencoded' // 默认值
+    }
+  },
+  getHeaderWithToken(){
+    return {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "Authorization": "Bearer " + this.globalData.token,
+    }
   }
 })

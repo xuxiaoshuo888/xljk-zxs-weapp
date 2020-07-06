@@ -1,4 +1,6 @@
 // pages/zx/zxDetail.js
+const app = getApp()
+
 Page({
 
   /**
@@ -8,13 +10,20 @@ Page({
     tabIndex:0,//tab激活index
     collapseActiveNames:'1',
     openFlag:false,//false 关闭，true 打开
+    id:null,
+    dto:{},
+    list:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    if(options.id){
+      this.setData({
+        id:options.id
+      })
+    }
   },
 
   /**
@@ -28,7 +37,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getData()
   },
 
   /**
@@ -64,6 +73,37 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  getData(){
+    let _this = this
+    wx.showLoading({
+      title: '加载中...',
+    })
+    wx.request({
+      url: `${app.globalData.serverPath}/api/consultant/recordInfo`,
+      header: app.getHeaderWithToken(),
+      data:{id:_this.data.id},
+      success(res) {
+        wx.hideLoading()
+        if (res.data.errcode === '0') {
+          _this.setData({
+            dto:res.data.dto,
+            list:res.data.list
+          })
+        } else {
+          wx.showToast({
+            icon: 'none',
+            title: res.data.errmsg,
+          })
+        }
+      },
+      fail(res) {
+        wx.hideLoading()
+        wx.showToast({
+          title: JSON.stringify(res)
+        })
+      }
+    })
   },
   toggleCard(){
     let flag = this.data.openFlag

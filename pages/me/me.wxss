@@ -1,1 +1,72 @@
 /* pages/me/me.wxss */
+/*我的*/
+.potrait{
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background:rgba(249,250,252,1);
+  border-radius:2px;
+}
+.potrait-img{
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  margin-right: 10px;
+  overflow: hidden;
+}
+.potrait-text{
+
+}
+.potrait-text>.name{
+  font-size:20px;
+  font-weight:600;
+  color:rgba(39,48,59,1);
+  line-height:28px;
+}
+.potrait-text>.xh{
+  font-size:14px;
+  font-weight:400;
+  color:rgba(59,72,89,1);
+  line-height:20px;
+}
+.my{
+  padding: 20px;
+  border-bottom:1px solid rgba(238,238,238,0.5);
+}
+.my>.my-div{
+  padding: 20px 10px;
+  border-bottom: 1px solid #E4E5EB;
+}
+.my-div:active{
+  background-color: #E4E5EB;
+}
+.my-view-img{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 30rpx;
+  vertical-align: middle;
+}
+.my-div-img{
+  width: 15px;
+  height: auto;
+  margin-right: 15px;
+  vertical-align: middle;
+}
+.steps-class{
+  width: 100%;
+  margin: 0 auto;
+}
+.bg-grey{
+  background-color: #f9fafc;
+}
+.bg-white{
+  background-color: #fff;
+}
+.padb{
+  padding: 10px 20px 200px;
+}
+.br{
+  border-radius: 5px;
+  background-color: #fff5d4;
+}
