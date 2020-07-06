@@ -1,0 +1,63 @@
+/* pages/login/login.wxss */
+
+.weui-label {
+  text-align: left;
+  width: 70px;
+}
+
+.page__title {
+  padding: 10px;
+  text-align: center;
+}
+
+.login-btn_bg {
+  background-color: #41b65a !important;
+}
+
+.login-bg {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.weui-label {
+  /* color: white; */
+  text-align-last: justify;
+  text-align: justify;
+  text-justify: distribute-all-lines;
+  padding-right: 10px;
+}
+
+.weui-input {
+  /* color: white; */
+  font-size: 14px;
+  line-height: 14px;
+  vertical-align: bottom;
+}
+
+.page1 {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.weui-cell:before {
+  left: 0px;
+}
+
+.weui-cell {
+  padding: 16px 0;
+}
+
+.title {
+  font-size: 15px;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: rgba(50, 59, 69, 1);
+  line-height: 21px;
+}

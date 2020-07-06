@@ -4,19 +4,37 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
+		"scopeDataCheck": false,
+		"coverView": true,
 		"es6": true,
 		"postcss": true,
+		"compileHotReLoad": true,
 		"preloadBackgroundData": false,
 		"minified": true,
-		"newFeature": true,
 		"autoAudits": false,
-		"coverView": true,
+		"newFeature": true,
+		"uglifyFileName": false,
+		"uploadWithSourceMap": true,
+		"useIsolateContext": true,
+		"nodeModules": true,
+		"enhance": false,
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false,
 		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"packNpmManually": false,
+		"packNpmRelationList": [],
+		"bundle": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.11.1",
+	"libVersion": "2.11.3",
 	"appid": "wx1c136f4712cb59be",
 	"projectname": "xljk-zxs-weapp",
 	"debugOptions": {

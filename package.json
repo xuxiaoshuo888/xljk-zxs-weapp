@@ -1,7 +1,6 @@
 {
   "name": "xljk-zxs-weapp",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +8,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vant/weapp": "^1.3.1"
-  }
+    "@vant/weapp": "^1.3.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuxiaoshuo888/xljk-zxs-weapp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xuxiaoshuo888/xljk-zxs-weapp/issues"
+  },
+  "homepage": "https://github.com/xuxiaoshuo888/xljk-zxs-weapp#readme",
+  "description": ""
 }
