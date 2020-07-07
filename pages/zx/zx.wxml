@@ -1,32 +1,50 @@
 <!--pages/zx/zx.wxml-->
-<van-search value="{{ searchValue }}" shape="round" background="#fff" placeholder="学号/姓名"/>
+<van-search value="{{ searchValue }}" shape="round" background="#fff" placeholder="学号/姓名" />
 <van-tabs active="{{ tabIndex }}" bind:change="onChange" color="#32B67A" sticky>
 	<van-tab title="未填写">
 		<view class="recd-item" wx:for="{{list_wtx}}" wx:key="index" wx:for-item="item">
 			<view class="recd-item-card">
-        <view class="recd-item-card-content">
-          <view class="recd-item-card-content-text" data-id="{{item.id}}" bindtap="toZxDetail">
-            <view class="content-text-left">{{item.xm}}</view>
-            <view class="content-text-center">{{item.rq}} {{item.starttime}}~{{item.endtime}}</view>
-            <view class="content-text-right">操作 <van-icon name="arrow" class="content-right-icon"/></view>
-          </view>
-        </view>
-      </view>
+				<view class="recd-item-card-content">
+					<view class="recd-item-card-content-text">
+						<view class="content-text-left">{{item.xm}}</view>
+						<view class="content-text-center">{{item.rq}} {{item.starttime}}~{{item.endtime}}</view>
+						<view class="content-text-right"> <text data-id="{{item.id}}" bindtap="toZxDetail">详情</text>
+							<van-icon name="arrow" class="content-right-icon" />
+						</view>
+					</view>
+				</view>
+			</view>
 		</view>
 	</van-tab>
 	<van-tab title="已填写">
-    <view class="recd-item" wx:for="{{list_ytx}}" wx:key="index" wx:for-item="item">
+		<view class="recd-item" wx:for="{{list_ytx}}" wx:key="index" wx:for-item="item">
 			<view class="recd-item-card">
-        <view class="recd-item-card-content">
-          <view class="recd-item-card-content-text" data-id="{{item.id}}" bindtap="toZxDetail">
-            <view class="content-text-left">{{item.xm}}</view>
-            <view class="content-text-center">{{item.rq}} {{item.starttime}}~{{item.endtime}}</view>
-            <view class="content-text-right">操作 <van-icon name="arrow" class="content-right-icon"/></view>
-          </view>
-        </view>
-      </view>
+				<view class="recd-item-card-content">
+					<view class="recd-item-card-content-text">
+						<view class="content-text-left">{{item.xm}}</view>
+						<view class="content-text-center">{{item.rq}} {{item.starttime}}~{{item.endtime}}</view>
+						<view class="content-text-right"> <text data-id="{{item.id}}" bindtap="toZxDetail" style="margin-right:15px">详情</text> <text  data-id="{{item.id}}" bindtap="jiean">结案</text>
+							<van-icon name="arrow" class="content-right-icon" />
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</van-tab>
+	<!-- <van-tab title="未结案">内容 3</van-tab> -->
+	<van-tab title="已结案">
+    <view class="recd-item" wx:for="{{list_yja}}" wx:key="index" wx:for-item="item" wx:if="{{item.status=='1'}}">
+			<view class="recd-item-card">
+				<view class="recd-item-card-content">
+					<view class="recd-item-card-content-text">
+						<view class="content-text-left">{{item.xm}}</view>
+						<view class="content-text-center">{{item.ksrq}}~ {{item.jsrq}}</view>
+						<view class="content-text-right"> <text data-id="{{item.id}}" bindtap="toyja" style="margin-right:15px">详情</text>
+							<van-icon name="arrow" class="content-right-icon" />
+						</view>
+					</view>
+				</view>
+			</view>
 		</view>
   </van-tab>
-	<van-tab title="未结案">内容 3</van-tab>
-	<van-tab title="已结案">内容 4</van-tab>
 </van-tabs>

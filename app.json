@@ -6,7 +6,9 @@
     "pages/zx/zxDetail",
     "pages/pb/pb",
     "pages/logs/logs",
-    "pages/me/me"
+    "pages/me/me",
+    "pages/zx/wja",
+    "pages/zx/yja"
   ],
   "usingComponents": {
     "van-cell": "./miniprogram_npm/@vant/weapp/cell/index",
@@ -30,6 +32,8 @@
     "van-col": "./miniprogram_npm/@vant/weapp/col/index",
     "van-icon": "./miniprogram_npm/@vant/weapp/icon/index",
     "van-popup": "./miniprogram_npm/@vant/weapp/popup/index",
+    "van-datetime-picker": "./miniprogram_npm/@vant/weapp/datetime-picker/index",
+    "van-picker": "./miniprogram_npm/@vant/weapp/picker/index",
     "van-swipe-cell": "./miniprogram_npm/@vant/weapp/swipe-cell/index",
     "van-search": "./miniprogram_npm/@vant/weapp/search/index",
     "van-collapse": "./miniprogram_npm/@vant/weapp/collapse/index",

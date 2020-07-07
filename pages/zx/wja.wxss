@@ -1,0 +1,26 @@
+/* pages/zx/wja.wxss */
+.btn-view {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40rpx;
+}
+
+.posi-fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.btn-view>button {
+  margin-right: 40rpx;
+}
+
+.btn-view>button:last-child {
+  margin-right: 0;
+}
+
+.btn-view>button {
+  flex: 1 1 40%;
+}

@@ -1,2 +1,41 @@
 <!--pages/pb/pb.wxml-->
-<text>pages/pb/pb.wxml</text>
+<view>
+	<view class="calendar">
+		<view class="week sticky">
+			<view class="week-view" wx:for="{{local_week}}" wx:for-item="week" wx:key="index">
+				<view class="week-item">{{week}}</view>
+
+			</view>
+		</view>
+		<view class='week' wx:for="{{days}}" wx:for-item="day" wx:key="index">
+			<view class="a1" wx:for="{{day}}" wx:for-item="day_item" wx:key="index">
+				<view class='rq'>{{day_item.date_day}}</view>
+				<view class="date-view day {{pb_item.status=='0' ? 'click-wyy' : ''}} {{pb_item.status=='1' ? 'click-yyy' : ''}} {{pb_item.id==currentItem.id ? 'click-xz' : ''}}" 
+        wx:for="{{day_item.pbList}}" hover-class="day-hover" wx:for-item="pb_item" data-item="{{pb_item}}" bindtap="clickDay" wx:key="index">{{pb_item.starttime}}
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="status-view">
+		<view class="status-view-item">
+			<view class="status-band wyy"></view>
+			<view>未预约</view>
+		</view>
+		<view class="status-view-item">
+			<view class="status-band yyy"></view>
+			<view>已预约</view>
+		</view>
+		<view class="status-view-item">
+			<view class="status-band xz"></view>
+			<view>选中</view>
+		</view>
+	</view>
+
+	<view class='currentItem' wx:if="{{currentItem.rq}}">
+		<view class="currentItem-title">值班详情</view>
+		<view class="currentItem-content">咨询时间：{{currentItem.rq}} {{currentItem.starttime}} ~ {{currentItem.endtime}}</view>
+		<view class="currentItem-content">咨询地点：{{currentItem.name}}</view>
+		<view class="currentItem-content">咨询状态：{{currentItem.status=='0' ? '未预约' : ''}}{{currentItem.status=='1' ? '已预约' : ''}}</view>
+	</view>
+</view>

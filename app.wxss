@@ -56,7 +56,8 @@ page {
 }
 
 .content-text-center {
-  /* flex: 1 1 auto; */
+  flex: 0 0 200rpx;
+
 }
 
 .content-text-right {
@@ -117,4 +118,10 @@ button[type=theme] {
 button[type=grey] {
   color: #fff;
   background: rgba(137, 152, 172, 1);
+}
+.text-c{
+  text-align: center;
+}
+.week-view,.rq{
+  width: 40px;
 }

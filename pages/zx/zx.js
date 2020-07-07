@@ -15,6 +15,7 @@ Page({
     page:null,
     pageSize:null,
     records:null,  
+    show_wja:true,
   },
 
   /**
@@ -35,7 +36,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getData()
+    this.getData();
+    this.getyjalist();
   },
 
   /**
@@ -107,6 +109,47 @@ Page({
             pageSize:res.data.page.pageSize,
             records:res.data.page.records
           })
+        } else {
+          wx.showToast({
+            icon: 'none',
+            title: res.data.errmsg,
+          })
+        }
+      },
+      fail(res) {
+        wx.hideLoading()
+        wx.showToast({
+          title: JSON.stringify(res)
+        })
+      }
+    })
+  },
+  jiean(e){
+    let id=e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `./wja?id=${id}`,
+    })
+  },
+  toyja(e){
+    let id=e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `./yja?id=${id}`,
+    })
+  },
+  getyjalist(){
+    let _this = this
+    wx.showLoading({
+      title: '加载中...',
+    })
+    wx.request({
+      url: `${app.globalData.serverPath}/api/consultant/getCaseBookList`,
+      header: app.getHeaderWithToken(),
+      success(res) {
+        wx.hideLoading()
+        if (res.data.errcode === '0') {
+         _this.setData({
+           list_yja:res.data.page.rows
+         })
         } else {
           wx.showToast({
             icon: 'none',

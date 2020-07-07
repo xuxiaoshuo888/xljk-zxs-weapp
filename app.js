@@ -39,7 +39,7 @@ App({
     openId:null,
     token:null,
     student:null,
-    serverPath: 'http://192.168.0.121:8080/xljk',//测试地址
+    serverPath: 'http://192.168.0.179:8080/xljk',//测试地址
   },
   getHeader(){
     return {

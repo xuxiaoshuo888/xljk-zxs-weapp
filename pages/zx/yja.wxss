@@ -1,0 +1,115 @@
+/* pages/zx/yja.wxss *//* pages/zx/zxDetail.wxss */
+.info-band {
+  padding: 40rpx;
+  margin: 40rpx 0;
+
+}
+
+.info-top {
+  background-color: #f4f5f9;
+  position: relative;
+
+}
+
+.info-band>.info-item:last-child {
+  margin-bottom: 0;
+}
+
+.info-font {
+  font-size: 28rpx;
+  color: rgba(90, 97, 124, 1);
+}
+
+.info-item {
+  display: flex;
+  align-items: top;
+  justify-content: flex-start;
+  margin-bottom: 20rpx;
+  z-index: 999;
+}
+
+.info-item-left {
+  flex: 0 0 170rpx;
+}
+
+.info-item-right {
+  flex: 1 1 auto;
+}
+
+.info-img {
+  width: 300rpx;
+  height: 160rpx;
+  position: absolute;
+  right: 10rpx;
+  top: 80rpx;
+  z-index: 1;
+}
+
+
+/*card*/
+.record-card {}
+
+.record-cardview {
+  border-radius: 48px;
+  box-shadow:0px 3px 10px 0px rgba(197,201,213,0.25);
+  transition: all ease 0.5s;
+}
+.record-cardview.open {
+  border-radius: 14px;
+}
+
+.cardview-head {
+  border: 1px solid #32B67A;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 48px;
+  overflow: hidden;
+  padding: 30rpx 40rpx;
+  color: #32B67A;
+  font-size:28rpx;
+  font-weight: 700;
+  transition: all ease 0.5s;
+
+}
+.record-cardview.open>.cardview-head{
+  border-radius: 14px 14px 0 0;
+  background-color: #32B67A;
+  color: #fff;
+}
+
+.cardview-body {
+  height: 0;
+  overflow: hidden;
+  transition: all ease 0.5s;
+  box-sizing: content-box;
+}
+.record-cardview.open>.cardview-body{
+  border-radius:  0 0 14px 14px;
+  height: auto;
+}
+.cardview-body-content{
+  padding: 20rpx 40rpx;
+}
+
+.btn-view{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40rpx;
+}
+.posi-fixed-bottom{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.btn-view>button{
+  margin-right: 40rpx;
+}
+.btn-view>button:last-child{
+  margin-right: 0;
+}
+.btn-view>button{
+  flex: 1 1 40%;
+}

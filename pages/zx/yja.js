@@ -103,7 +103,7 @@ Page({
       title: '加载中...',
     })
     wx.request({
-      url: `${app.globalData.serverPath}/api/consultant/recordInfo`,
+      url: `${app.globalData.serverPath}/api/consultant/caseBookInfo`,
       header: app.getHeaderWithToken(),
       data: {
         id: _this.data.id
