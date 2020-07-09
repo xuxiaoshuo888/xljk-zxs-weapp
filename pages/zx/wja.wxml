@@ -1,7 +1,7 @@
 <!--pages/zx/wja.wxml-->
 <view>
 	<van-cell-group>
-		<van-field value="{{ message }}" label="总结" type="textarea" placeholder="请输入总结" autosize bind:input="input" border="{{ false }}" />
+		<van-field value="{{ message }}" label="总结" type="textarea" placeholder="请输入总结" autosize="{{autosize}}" bind:input="input" border="{{ false }}" />
 	</van-cell-group>
 	<view class="btn-view posi-fixed-bottom">
 		<button size="large" type="theme" bindtap="submit">提交</button>

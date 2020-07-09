@@ -1,4 +1,5 @@
 /* pages/login/login.wxss */
+@import '/style/weui.wxss';
 
 .weui-label {
   text-align: left;
@@ -55,9 +56,42 @@
 }
 
 .title {
-  font-size: 15px;
+  font-size: 22px;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: rgba(50, 59, 69, 1);
+  color: #fff;
   line-height: 21px;
+}
+
+.input-style {
+  color: #fff;
+}
+
+button::after {
+  width: 0;
+  height: 0;
+}
+
+.weui-cell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid rgba(255,255,255,0.5)!important;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.weui-cell__hd {
+  flex: 0 0 40px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.weui-cell__bd {
+  flex: 1 1 auto;
+}
+
+.weui-cell:before {
+  height: 0;
+  border: none;
 }

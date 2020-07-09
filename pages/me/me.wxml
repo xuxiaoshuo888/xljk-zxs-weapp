@@ -10,21 +10,31 @@
 		</view>
 	</view>
 	<view class="my">
-		<view class="my-view">
+		<!-- <view class="my-view">
 			<image class="my-view-img" src="/images/my-cp.png"></image><text>个人简介</text>
-		</view>
+		</view> -->
 		<!-- <view class="my-view" v-for="i in myList" @click="meToDetail(i)">
                 <image class="my-view-img" :src="'${ctx}/static/images/weixinNew/' + i.img"></image>{{i.text}}
             </view> -->
 	</view>
-	<view class="my">
+	<view class="my" bindtap="toZx">
 		<view class="my-view">
-			<image class="my-view-img" src="/images/my-cp.png"></image><text>我的咨询</text>
+			<image class="my-view-img" src="/images/my-zx.png"></image><text>我的咨询</text>
+		</view>
+	</view>
+	<view class="my" bindtap="toPb">
+		<view class="my-view">
+			<image class="my-view-img" src="/images/my-cp.png"></image><text>我的排班</text>
+		</view>
+	</view>
+	<view class="my" bindtap="unbind">
+		<view class="my-view">
+			<image class="my-view-img" src="/images/my-wt.png"></image><text>解绑账号</text>
 		</view>
 	</view>
 	<view class="my">
 		<view class="my-view">
-			<image class="my-view-img" src="/images/my-cp.png"></image><text>我的排班</text>
+			<image class="my-view-img" src="/images/my-xx.png"></image><text>版本：1.0.0</text>
 		</view>
 	</view>
 </view>

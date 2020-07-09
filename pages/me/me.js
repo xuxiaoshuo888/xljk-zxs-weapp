@@ -74,6 +74,16 @@ Page({
   onShareAppMessage: function () {
 
   },
+  toPb(){
+    wx.switchTab({
+      url: '/pages/pb/pb',
+    })
+  },
+  toZx(){
+    wx.switchTab({
+      url: '/pages/zx/zx',
+    })
+  },
   unbind(){
     let openid = this.data.openid
     wx.showModal({

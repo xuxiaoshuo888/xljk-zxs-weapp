@@ -1,83 +1,40 @@
-<!--pages/zx/yja.wxml-->
-<!--pages/zx/zxDetail.wxml-->
-<!--pages/zx/zx.wxml-->
 <van-tabs active="{{ tabIndex }}" bind:change="onChange" color="#32B67A" sticky>
 	<van-tab title="个案信息">
-		<view class="info-band info-font info-top">
-			<image src="/images/info-bg.png" mode="aspectFit" class="info-img"></image>
+		<view class="info-band info-font info-top" wx:for="{{appointHistoryList}}" wx:key="index">
+			<view class="recd-item-title">第{{index + 1}}次预约</view>
 			<view class="info-item">
-				<view class="info-item-left">学号：</view>
-				<view class="info-item-right">{{list[0].xh || '暂无数据'}}</view>
+				<view class="info-item-left">咨询师：</view>
+				<view class="info-item-right">{{item.appoint.rota.consultant.truename || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
-				<view class="info-item-left">姓名：</view>
-				<view class="info-item-right">{{list[0].xm || '暂无数据'}}</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">性别：</view>
-				<view class="info-item-right">{{list[0].xb || '暂无数据'}}</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">院系：</view>
-				<view class="info-item-right">{{list[0].deptname || '暂无数据'}}</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">院系：</view>
-				<view class="info-item-right">{{list[0].nj || '暂无数据'}}</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">电话：</view>
-				<view class="info-item-right">{{list[0].lxdh || '暂无数据'}}</view>
-			</view>
-		</view>
-		<view class="info-band info-font">
-			<view class="recd-item-title">咨询信息</view>
-			<view class="info-item">
-				<view class="info-item-left">个案号：</view>
-				<view class="info-item-right">{{list[0].case_num || '暂无数据'}}</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">预约方式：</view>
-				<view class="info-item-right">{{list[0].yyfs || '暂无数据'}}</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">预约员：</view>
-				<view class="info-item-right">{{list[0].appoint || '暂无数据'}}</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">咨询次数：</view>
-				<view class="info-item-right">{{list[0].zxcs || '暂无数据'}}</view>
-			</view>
-			<view class="info-item">
-				<view class="info-item-left">咨询日期：</view>
-				<view class="info-item-right">{{list[0].zxrq || '暂无数据'}}</view>
+				<view class="info-item-left">咨询室：</view>
+				<view class="info-item-right">{{item.appoint.rota.room.name || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">咨询时间：</view>
-				<view class="info-item-right">{{list[0].zxsj || '暂无数据'}}</view>
+				<view class="info-item-right">{{item.appoint.rota.rq}} {{item.appoint.rota.starttime}}~{{item.appoint.rota.endtime}}</view>
+			</view>
+			<view class="info-item">
+				<view class="info-item-left">预约方式：</view>
+				<view class="info-item-right">{{item.appoint.yyfs || '暂无数据'}}</view>
+			</view>
+			<view class="info-item">
+				<view class="info-item-left">咨询状态：</view>
+				<view class="info-item-right">{{item.appoint.status=='1'?'未填写':''}}{{item.appoint.status=='2'?'已填写':''}}</view>
+			</view>
+			<view class="info-item">
+				<view class="info-item-left">资讯概要：</view>
+				<view class="info-item-right">{{item.appoint.thyd || '暂无数据'}}</view>
 			</view>
 		</view>
-		<view style="padding-bottom:150px;">
-			<van-cell-group>
-				<van-field value="{{ zxlx }}" label="咨询类型" placeholder="请选择咨询类型" disabled bindtap="choose_zxlx" border="{{false}}" />
-				<van-field value="{{ zxrq }}" label="咨询日期" placeholder="请选择咨询日期" disabled bindtap="choose_zxrq" border="{{false}}" />
-				<van-field value="{{ zxsj }}" label="咨询时间" value="{{zxsj}}" placeholder="例：14:00~14:30" bind:input="input_zxsj" border="{{false}}" />
-				<van-field value="{{ zxgy }}" label="咨询概要" value="{{zxgy}}" placeholder="请填写咨询概要" type="textarea" bind:input="input_zxgy" autosize />
-			</van-cell-group>
+		<view class="info-band info-font">
+			<view class="recd-item-title">个案总结</view>
+			<view class="info-item">
+				<view class="info-item-left">个案总结：</view>
+				<view class="info-item-right">{{caseBook.zj}}</view>
+			</view>
 		</view>
-		<!-- 咨询类型下拉框 -->
-		<van-popup show="{{ show_zxlx }}" position="bottom">
-			<van-picker columns="{{ zxlxList }}" value-key="label" show-toolbar title="咨询类型" bind:confirm="onConfirm_zxlx" bind:cancel="close_zxlx">
-			</van-picker>
-		</van-popup>
-
-		<van-popup show="{{ show_zxrq }}" position="bottom">
-			<van-datetime-picker value="{{zxrq}}" type="date" bind:confirm="confirm_zxrq" bind:cancel="cancel_zxrq"></van-datetime-picker>
-		</van-popup>
-		<view class="btn-view posi-fixed-bottom">
-			<!-- <button size="large" type="grey">取消</button> -->
-			<button size="large" type="theme" bindtap="submit">提交</button>
-		</view>
+		
 	</van-tab>
 	<van-tab title="预约信息">
 		<view class="info-band info-font">
@@ -88,27 +45,27 @@
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">来访主题：</view>
-				<view class="info-item-right">{{dto.app.lfzt}}</view>
+				<view class="info-item-right">{{dto.app.lfzt || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">备选时间段：</view>
-				<view class="info-item-right">{{dto.app.bxsj}}</view>
+				<view class="info-item-right">{{dto.app.bxsj || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">心理咨询经历：</view>
-				<view class="info-item-right">{{dto.app.zxls}}</view>
+				<view class="info-item-right">{{dto.app.zxls || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">困扰开始时间：</view>
-				<view class="info-item-right">{{dto.app.krsj}}</view>
+				<view class="info-item-right">{{dto.app.krsj || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">曾经或正在服精神类药物：</view>
-				<view class="info-item-right">{{dto.app.zls}}</view>
+				<view class="info-item-right">{{dto.app.zls || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">请简要陈述来访问题及对咨询的期待：</view>
-				<view class="info-item-right">{{dto.app.bz}}</view>
+				<view class="info-item-right">{{dto.app.bz || '暂无数据'}}</view>
 			</view>
 		</view>
 	</van-tab>
@@ -117,56 +74,56 @@
 			<view class="recd-item-title">初谈信息</view>
 			<view class="info-item">
 				<view class="info-item-left">就诊：</view>
-				<view class="info-item-right">{{fzinfo.sfjz}}</view>
+				<view class="info-item-right">{{fzinfo.sfjz || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">初访：</view>
-				<view class="info-item-right">{{fzinfo.sfcf}}</view>
+				<view class="info-item-right">{{fzinfo.sfcf || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">来访主题：</view>
-				<view class="info-item-right">{{fzinfo.lfzt}}</view>
+				<view class="info-item-right">{{fzinfo.lfzt || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">初谈咨询师：</view>
-				<view class="info-item-right">{{fzinfo.zxs}}</view>
+				<view class="info-item-right">{{fzinfo.zxs || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">初谈时段：</view>
-				<view class="info-item-right">{{fzinfo.rq}}</view>
+				<view class="info-item-right">{{fzinfo.rq || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">学生自评是否紧急：</view>
-				<view class="info-item-right">{{fzinfo.zpjjqk}}</view>
+				<view class="info-item-right">{{fzinfo.zpjjqk || '暂无数据'}}</view>
 			</view>
 
 			<view class="recd-item-title">如来访者暂时无法安排初谈，请填写以下内容</view>
 			<view class="info-item">
 				<view class="info-item-left">无法安排初谈原因：</view>
-				<view class="info-item-right">{{fzinfo.wfapyy}}</view>
+				<view class="info-item-right">{{fzinfo.wfapyy || '暂无数据'}}</view>
 			</view>
 
 			<view class="recd-item-title">评估</view>
 
 			<view class="info-item">
 				<view class="info-item-left">评估等级：</view>
-				<view class="info-item-right">{{fzinfo.pgdj}}</view>
+				<view class="info-item-right">{{fzinfo.pgdj || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">处理：</view>
-				<view class="info-item-right">{{fzinfo.cl}}</view>
+				<view class="info-item-right">{{fzinfo.cl || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">咨询师：</view>
-				<view class="info-item-right">{{fzinfo.zxs}}</view>
+				<view class="info-item-right">{{fzinfo.zxs || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">空闲时段：</view>
-				<view class="info-item-right">{{fzinfo.kxsjd}}</view>
+				<view class="info-item-right">{{fzinfo.kxsjd || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">备注：</view>
-				<view class="info-item-right">{{fzinfo.bz}}</view>
+				<view class="info-item-right">{{fzinfo.bz || '暂无数据'}}</view>
 			</view>
 
 			<view class="recd-item-title">预约信息</view>
@@ -177,7 +134,7 @@
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">咨询师：</view>
-				<view class="info-item-right">{{fzinfo.rota.consultant.truename}}</view>
+				<view class="info-item-right">{{fzinfo.rota.consultant.truename || '暂无数据'}}</view>
 			</view>
 		</view>
 		<view style="padding-top:100px;"></view>

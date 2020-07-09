@@ -27,7 +27,6 @@ Page({
     openFlag: false, //false 关闭，true 打开
     id: null,
     dto: {},
-    list: [],
     zxlxList: [], //咨询类型list
     show_zxlx: false,
     zxlx:null,
@@ -35,6 +34,10 @@ Page({
     zxsj:null,
     zxgy:null,
     fzinfo:{},//初谈
+    appointHistoryList:[],//个案信息
+    list:[],
+    caseBooke:{},
+    map:{}
   },
 
   /**
@@ -61,6 +64,7 @@ Page({
    */
   onShow: function () {
     this.getData()
+    this.getctinfo()
   },
 
   /**
@@ -112,24 +116,15 @@ Page({
         wx.hideLoading()
         if (res.data.errcode === '0') {
           _this.setData({
-            dto: res.data.dto,
-            list: res.data.list
+            appointHistoryList: res.data.appointHistoryList,
+            list: res.data.list,
+            caseBook: res.data.caseBook,
+            map:res.data.map,
+            dto:res.data.appoint
           })
-          let zxlx=''
-          _this.data.zxlxList.forEach(item=>{
-            if(item.value == res.data.appointHistory.appoint.zxlx){
-              zxlx = item.label
-              return
-            }
-          })
-          _this.setData({
-            zxgy:res.data.appointHistory.thyd,
-            zxsj:res.data.appointHistory.appoint.zxsj,
-            zxrq:res.data.appointHistory.appoint.zxrq,
-            zxlx_value:res.data.appointHistory.appoint.zxlx,
-            zxlx:zxlx
-          })
-          _this.getctinfo()
+          if(res.data.appoint.app.id){
+            _this.getctinfo()
+          }
         } else {
           wx.showToast({
             icon: 'none',

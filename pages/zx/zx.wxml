@@ -1,5 +1,5 @@
 <!--pages/zx/zx.wxml-->
-<van-search value="{{ searchValue }}" shape="round" background="#fff" placeholder="学号/姓名" />
+<!-- <van-search value="{{ searchValue }}" shape="round" background="#fff" placeholder="学号/姓名" /> -->
 <van-tabs active="{{ tabIndex }}" bind:change="onChange" color="#32B67A" sticky>
 	<van-tab title="未填写">
 		<view class="recd-item" wx:for="{{list_wtx}}" wx:key="index" wx:for-item="item">

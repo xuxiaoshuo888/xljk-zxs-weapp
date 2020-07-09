@@ -6,7 +6,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-      id:null
+    id: null,
+    autosize: {
+      minHeight: 250
+    }
   },
 
   /**
@@ -14,7 +17,7 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      id:options.id
+      id: options.id
     })
   },
 
@@ -66,22 +69,22 @@ Page({
   onShareAppMessage: function () {
 
   },
-  input(e){
+  input(e) {
     this.setData({
-      message:e.detail
+      message: e.detail
     })
   },
-  submit(){
+  submit() {
     if (!this.data.message) {
       wx.showToast({
-        icon:'none',
+        icon: 'none',
         title: '请填写总结！',
       })
       return
     }
-    let data={
-      id:this.data.id,
-      zj:this.data.message
+    let data = {
+      id: this.data.id,
+      zj: this.data.message
     }
     wx.showLoading({
       title: '提交中...',

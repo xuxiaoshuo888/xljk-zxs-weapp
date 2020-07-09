@@ -8,8 +8,8 @@ Page({
   data: {
     // username: "2016121119000451",
     // password: "Sibe2016",
-    username: "chengye",
-    password: "Ssibe2016",
+    username: "",
+    password: "",
     pwdFocus: false,
     userFocus: true,
     opneId: ''

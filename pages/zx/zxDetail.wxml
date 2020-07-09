@@ -87,27 +87,27 @@
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">来访主题：</view>
-				<view class="info-item-right">{{dto.app.lfzt}}</view>
+				<view class="info-item-right">{{dto.app.lfzt || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">备选时间段：</view>
-				<view class="info-item-right">{{dto.app.bxsj}}</view>
+				<view class="info-item-right">{{dto.app.bxsj || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">心理咨询经历：</view>
-				<view class="info-item-right">{{dto.app.zxls}}</view>
+				<view class="info-item-right">{{dto.app.zxls || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">困扰开始时间：</view>
-				<view class="info-item-right">{{dto.app.krsj}}</view>
+				<view class="info-item-right">{{dto.app.krsj || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">曾经或正在服精神类药物：</view>
-				<view class="info-item-right">{{dto.app.zls}}</view>
+				<view class="info-item-right">{{dto.app.zls || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">请简要陈述来访问题及对咨询的期待：</view>
-				<view class="info-item-right">{{dto.app.bz}}</view>
+				<view class="info-item-right">{{dto.app.bz || '暂无数据'}}</view>
 			</view>
 		</view>
 	</van-tab>
@@ -116,67 +116,67 @@
 			<view class="recd-item-title">初谈信息</view>
 			<view class="info-item">
 				<view class="info-item-left">就诊：</view>
-				<view class="info-item-right">{{fzinfo.sfjz}}</view>
+				<view class="info-item-right">{{fzinfo.sfjz || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">初访：</view>
-				<view class="info-item-right">{{fzinfo.sfcf}}</view>
+				<view class="info-item-right">{{fzinfo.sfcf || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">来访主题：</view>
-				<view class="info-item-right">{{fzinfo.lfzt}}</view>
+				<view class="info-item-right">{{fzinfo.lfzt || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">初谈咨询师：</view>
-				<view class="info-item-right">{{fzinfo.zxs}}</view>
+				<view class="info-item-right">{{fzinfo.zxs || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">初谈时段：</view>
-				<view class="info-item-right">{{fzinfo.rq}}</view>
+				<view class="info-item-right">{{fzinfo.rq || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">学生自评是否紧急：</view>
-				<view class="info-item-right">{{fzinfo.zpjjqk}}</view>
+				<view class="info-item-right">{{fzinfo.zpjjqk || '暂无数据'}}</view>
 			</view>
 
 			<view class="recd-item-title">如来访者暂时无法安排初谈，请填写以下内容</view>
 			<view class="info-item">
 				<view class="info-item-left">无法安排初谈原因：</view>
-				<view class="info-item-right">{{fzinfo.wfapyy}}</view>
+				<view class="info-item-right">{{fzinfo.wfapyy || '暂无数据'}}</view>
 			</view>
 
 			<view class="recd-item-title">评估</view>
 
 			<view class="info-item">
 				<view class="info-item-left">评估等级：</view>
-				<view class="info-item-right">{{fzinfo.pgdj}}</view>
+				<view class="info-item-right">{{fzinfo.pgdj || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">处理：</view>
-				<view class="info-item-right">{{fzinfo.cl}}</view>
+				<view class="info-item-right">{{fzinfo.cl || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">咨询师：</view>
-				<view class="info-item-right">{{fzinfo.zxs}}</view>
+				<view class="info-item-right">{{fzinfo.zxs || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">空闲时段：</view>
-				<view class="info-item-right">{{fzinfo.kxsjd}}</view>
+				<view class="info-item-right">{{fzinfo.kxsjd || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">备注：</view>
-				<view class="info-item-right">{{fzinfo.bz}}</view>
+				<view class="info-item-right">{{fzinfo.bz || '暂无数据'}}</view>
 			</view>
 
 			<view class="recd-item-title">预约信息</view>
 
 			<view class="info-item">
 				<view class="info-item-left">预约日期：</view>
-				<view class="info-item-right">{{fzinfo.rota.rq}} {{fzinfo.rota.starttime}}~{{fzinfo.rota.endtime}}</view>
+				<view class="info-item-right">{{fzinfo.rota.rq}} {{fzinfo.rota.starttime || '暂无数据'}}~{{fzinfo.rota.endtime || '暂无数据'}}</view>
 			</view>
 			<view class="info-item">
 				<view class="info-item-left">咨询师：</view>
-				<view class="info-item-right">{{fzinfo.rota.consultant.truename}}</view>
+				<view class="info-item-right">{{fzinfo.rota.consultant.truename || '暂无数据'}}</view>
 			</view>
 		</view>
 

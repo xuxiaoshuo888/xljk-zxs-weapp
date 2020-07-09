@@ -1,25 +1,27 @@
 <!--pages/login/login.wxml-->
-<image src="/img/login-bg.png" class="login-bg" style="width:100vw;height:100vh;" mode="aspectFill"></image>
+<image src="/images/login-bg.png" class="login-bg" style="width:100vw;height:100vh;" mode="aspectFill"></image>
 <view class="page1" xmlns:wx="http://www.w3.org/1999/xhtml">
-  <view style="z-index:999;text-align:center;margin-bottom:100rpx;">
-    <image src="/img/login-star.png" style="width:112rpx;height:104rpx;margin:10px auto;" mode="aspectFill"></image>
-    <view class="title">心理健康</view>
-  </view>
-  <view class="page__bd" style="width:80vw;">
-    <view class="weui-cells weui-cells_after-title" style="background-color:transparent;">
-      <view class="weui-cell ">
-        <view class="weui-cell__bd">
-          <input class="weui-input" bindinput="setUsername" placeholder="请输入用户名" bindconfirm="handleConfirmUser" focus="{{userFocus}}" />
-        </view>
-      </view>
-      <view class="weui-cell  weui-cells_after-title">
-        <view class="weui-cell__bd">
-          <input class="weui-input" bindinput="setPassword" placeholder="请输入密码" password="true" bindconfirm="handleConfirmPwd" focus="{{pwdFocus}}" />
-        </view>
-      </view>
-    </view>
-    <view class="" style="margin-top:100rpx;">
-      <button class="weui-btn login-btn_bg" size="default" type="primary" bindtap="login">登录</button>
-    </view>
-  </view>
+	<view style="z-index:999;text-align:center;margin-bottom:100rpx;">
+		<image src="/img/login-star.png" style="width:112rpx;height:104rpx;margin:10px auto;" mode="aspectFill"></image>
+		<view class="title">心理健康</view>
+	</view>
+	<view class="page__bd" style="width:80vw;">
+		<!-- <view class="weui-cells" style="background-color:transparent;"> -->
+			<view class="weui-cell">
+				<view class="weui-cell__hd">账号</view>
+				<view class="weui-cell__bd">
+					<input class="weui-input input-style" bindinput="setUsername" placeholder="" bindconfirm="handleConfirmUser" focus="{{userFocus}}" />
+				</view>
+			</view>
+			<view class="weui-cell">
+				<view class="weui-cell__hd">密码</view>
+				<view class="weui-cell__bd">
+					<input class="weui-input input-style" bindinput="setPassword" placeholder="" password="true" bindconfirm="handleConfirmPwd" focus="{{pwdFocus}}" />
+				</view>
+			</view>
+		<!-- </view> -->
+		<view class="" style="margin-top:100rpx;">
+			<button class="weui-btn login-btn_bg" size="default" type="primary" bindtap="login">登录</button>
+		</view>
+	</view>
 </view>
