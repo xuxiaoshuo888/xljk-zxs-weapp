@@ -34,7 +34,7 @@
 	</view>
 	<view class="my">
 		<view class="my-view">
-			<image class="my-view-img" src="/images/my-xx.png"></image><text>版本：1.0.0</text>
+			<image class="my-view-img" src="/images/my-xx.png"></image><text>版本：1.0.2</text>
 		</view>
 	</view>
 </view>

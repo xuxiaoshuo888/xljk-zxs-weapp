@@ -59,7 +59,7 @@
   font-size: 22px;
   font-family: PingFangSC-Medium, PingFang SC;
   font-weight: 500;
-  color: #fff;
+  /* color: #fff; */
   line-height: 21px;
 }
 
@@ -94,4 +94,20 @@ button::after {
 .weui-cell:before {
   height: 0;
   border: none;
+}
+.new-login-btn{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx 10vw;
+  box-sizing: border-box;
+  width: 100vw;
+}
+.new-login-text{
+  font-size: 40rpx;
+  color: #fff;
+}
+.new-login-image{
+  width: 100rpx;
+  height: 100rpx;
 }

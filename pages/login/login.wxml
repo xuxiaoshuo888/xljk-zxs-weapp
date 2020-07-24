@@ -2,26 +2,31 @@
 <image src="/images/login-bg.png" class="login-bg" style="width:100vw;height:100vh;" mode="aspectFill"></image>
 <view class="page1" xmlns:wx="http://www.w3.org/1999/xhtml">
 	<view style="z-index:999;text-align:center;margin-bottom:100rpx;">
-		<image src="/img/login-star.png" style="width:112rpx;height:104rpx;margin:10px auto;" mode="aspectFill"></image>
+		<!-- <image src="/img/login-star.png" style="width:112rpx;height:104rpx;margin:10px auto;" mode="aspectFill"></image> -->
 		<view class="title">心理健康</view>
 	</view>
 	<view class="page__bd" style="width:80vw;">
 		<!-- <view class="weui-cells" style="background-color:transparent;"> -->
-			<view class="weui-cell">
-				<view class="weui-cell__hd">账号</view>
-				<view class="weui-cell__bd">
-					<input class="weui-input input-style" bindinput="setUsername" placeholder="" bindconfirm="handleConfirmUser" focus="{{userFocus}}" />
-				</view>
+		<view class="weui-cell">
+			<view class="weui-cell__hd">账号</view>
+			<view class="weui-cell__bd">
+				<input class="weui-input input-style" bindinput="setUsername" placeholder="" bindconfirm="handleConfirmUser" focus="{{userFocus}}" />
 			</view>
-			<view class="weui-cell">
-				<view class="weui-cell__hd">密码</view>
-				<view class="weui-cell__bd">
-					<input class="weui-input input-style" bindinput="setPassword" placeholder="" password="true" bindconfirm="handleConfirmPwd" focus="{{pwdFocus}}" />
-				</view>
-			</view>
-		<!-- </view> -->
-		<view class="" style="margin-top:100rpx;">
-			<button class="weui-btn login-btn_bg" size="default" type="primary" bindtap="login">登录</button>
 		</view>
+		<view class="weui-cell">
+			<view class="weui-cell__hd">密码</view>
+			<view class="weui-cell__bd">
+				<input class="weui-input input-style" bindinput="setPassword" placeholder="" password="true" bindconfirm="handleConfirmPwd" focus="{{pwdFocus}}" />
+			</view>
+		</view>
+		<!-- </view> -->
+		<!-- <view class="" style="margin-top:100rpx;">
+			<button class="weui-btn login-btn_bg" size="default" type="primary" bindtap="login">登录</button>
+		</view> -->
+		
 	</view>
+	<view class="new-login-btn" style="z-index:999;">
+			<view class="new-login-text">登录</view>
+			<image src="/images/login.png" class="new-login-image" mode="aspectFit" bindtap="login"></image>
+		</view>
 </view>
