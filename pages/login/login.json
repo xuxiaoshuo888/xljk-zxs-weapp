@@ -1,4 +1,7 @@
 {
   "usingComponents": {},
-  "navigationStyle": "custom"
+  "navigationStyle": "custom",
+  "singlePage" : {
+    "navigationBarFit" : "squeezed"
+  }
 }

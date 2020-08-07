@@ -19,7 +19,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.showShareMenu({
+      withShareTicket: true,
+      menus: ['shareAppMessage', 'shareTimeline']
+    })
   },
 
   /**
@@ -76,7 +79,11 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: '咨询师助手',
+      path: '/pages/index/index',
+      imageUrl: 'https://pic5.zhuanstatic.com/zhuanzh/n_v2be00a9c4aa4941bf8567f5fd999e2709.png',
+    }
   },
   setUsername: function (e) {
     this.setData({
@@ -142,16 +149,16 @@ Page({
       success(res) {
         console.log(res)
         wx.hideLoading()
-        if (res.data.errcode == '0') {//登录成功-home
+        if (res.data.errcode == '0') { //登录成功-home
           app.globalData.token = res.data.user.token
           app.globalData.openId = res.data.user.openid
           app.globalData.student = res.data.user.user
           wx.switchTab({
             url: '/pages/pb/pb',
           })
-        } else {//提示错误信息
+        } else { //提示错误信息
           wx.showToast({
-            icon:'none',
+            icon: 'none',
             title: res.data.errmsg,
           })
         }
