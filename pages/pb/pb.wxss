@@ -127,3 +127,6 @@
 .calendar{
   padding-bottom: 20px;
 }
+.currentItem-btnview{
+  text-align: right;
+}

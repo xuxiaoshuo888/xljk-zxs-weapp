@@ -10,8 +10,10 @@
 		<view class='week' wx:for="{{days}}" wx:for-item="day" wx:key="index">
 			<view class="a1" wx:for="{{day}}" wx:for-item="day_item" wx:key="index">
 				<view class='rq'>{{day_item.date_day}}</view>
-				<view class="date-view day {{pb_item.status=='0' ? 'click-wyy' : ''}} {{pb_item.status=='1' ? 'click-yyy' : ''}} {{pb_item.id==currentItem.id ? 'click-xz' : ''}}" 
-        wx:for="{{day_item.pbList}}" hover-class="day-hover" wx:for-item="pb_item" data-item="{{pb_item}}" bindtap="clickDay" wx:key="index">{{pb_item.starttime}}
+				<view
+					class="date-view day {{pb_item.status=='0' ? 'click-wyy' : ''}} {{pb_item.status=='1' ? 'click-yyy' : ''}} {{pb_item.id==currentItem.id ? 'click-xz' : ''}}"
+					wx:for="{{day_item.pbList}}" hover-class="day-hover" wx:for-item="pb_item" data-item="{{pb_item}}"
+					bindtap="clickDay" wx:key="index">{{pb_item.starttime}}
 				</view>
 			</view>
 		</view>
@@ -34,8 +36,33 @@
 
 	<view class='currentItem' wx:if="{{currentItem.rq}}">
 		<view class="currentItem-title">值班详情</view>
-		<view class="currentItem-content">咨询时间：{{currentItem.rq}} {{currentItem.starttime}} ~ {{currentItem.endtime}}</view>
+		<view class="currentItem-content">
+			咨询时间：{{currentItem.rq}} {{currentItem.starttime}} ~ {{currentItem.endtime}}
+		</view>
 		<view class="currentItem-content">咨询地点：{{currentItem.name}}</view>
-		<view class="currentItem-content">咨询状态：{{currentItem.status=='0' ? '未预约' : ''}}{{currentItem.status=='1' ? '已预约' : ''}}</view>
+		<view class="currentItem-content">
+			咨询状态：{{currentItem.status=='0' ? '未预约' : ''}}{{currentItem.status=='1' ? '已预约' : ''}}
+		</view>
+		<view class="currentItem-content" hidden="{{!currentItem.qjstatus}}">请假状态：
+			{{currentItem.qjstatus=='0' ? '待审核' : ''}}
+			{{currentItem.qjstatus=='1' ? '已通过' : ''}}
+			{{currentItem.qjstatus=='2' ? '不通过' : ''}}
+			{{currentItem.qjstatus=='3' ? '管理员添加（通过）' : ''}}
+		</view>
+		<view class="currentItem-btnview" hidden="{{currentItem.qjstatus=='1'}}">
+			<van-button size="small" round type="primary" bindtap="qingjia" data-item="{{currentItem}}">请假</van-button>
+		</view>
 	</view>
+	<van-popup show="{{ show }}" round bind:close="onClose" custom-style="{{style}}">
+		<view style="padding:30rpx;">
+			<view style="padding:20px 5px;"> 咨询时间：{{currentItem.rq}} {{currentItem.starttime}} ~ {{currentItem.endtime}}
+			</view>
+			<view>
+				<van-field value="{{ yy }}" bind:input="ipt" label="请假原因" type="textarea" placeholder="请输入请假原因" autosize border="{{ false }}" />
+			</view>
+		</view>
+		<view style="text-align:center;padding:20px;">
+			<van-button bindtap="tijiao" size="large" round type="primary">提交</van-button>
+		</view>
+	</van-popup>
 </view>
