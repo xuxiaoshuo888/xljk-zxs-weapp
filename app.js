@@ -39,8 +39,8 @@ App({
     openId:null,
     token:null,
     student:null,
-    // serverPath: 'http://192.168.0.179:8080/xljk',//测试地址
-    serverPath: 'http://39.105.2.146:90/xljktest',//测试地址
+    serverPath: 'http://192.168.0.179:8080/xljk',//测试地址
+    // serverPath: 'http://39.105.2.146:90/xljktest',//测试地址
     //
     // serverPath: 'http://xlzx.hust.sibetech.cn:90/xlhust',//体验版地址
   },
