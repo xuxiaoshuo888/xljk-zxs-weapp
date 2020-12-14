@@ -61,7 +61,7 @@
 				<van-field value="{{ zxlx }}" label="咨询类型" placeholder="请选择咨询类型" disabled bindtap="choose_zxlx" border="{{false}}" />
 				<van-field value="{{ zxrq }}" label="咨询日期" placeholder="请选择咨询日期" disabled bindtap="choose_zxrq" border="{{false}}" />
 				<van-field value="{{ zxsj }}" label="咨询时间" value="{{zxsj}}" placeholder="例：14:00~14:30" bind:input="input_zxsj" border="{{false}}" />
-				<van-field value="{{ zxgy }}" label="咨询概要" value="{{zxgy}}" placeholder="请填写咨询概要" type="textarea" bind:input="input_zxgy" autosize />
+				<van-field value="{{ zxgy }}" label="咨询概要" value="{{zxgy}}" placeholder="请填写咨询概要" type="textarea" bind:input="input_zxgy" autosize="{{textareaStyle}}" />
 			</van-cell-group>
 		</view>
 		<!-- 咨询类型下拉框 -->

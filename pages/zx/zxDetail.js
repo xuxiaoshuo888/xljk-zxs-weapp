@@ -35,6 +35,7 @@ Page({
     zxsj:null,
     zxgy:null,
     fzinfo:{},//初谈
+    textareaStyle: { maxHeight: 120, minHeight: 80 },
   },
 
   /**
