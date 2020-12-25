@@ -308,6 +308,9 @@ Page({
           wx.showToast({
             title: res.data.errmsg,
           })
+          wx.switchTab({
+            url: '/pages/zx/zx',
+          })
         } else {
           wx.showToast({
             icon: 'none',

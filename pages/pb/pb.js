@@ -14,7 +14,8 @@ Page({
     currentItem: {}, //
     show: false,
     style: "height: 70%;width:70%;",
-    yy: ''
+    yy: '',
+    autosize:'{minHeight: 150}'
   },
 
   /**
@@ -189,6 +190,11 @@ Page({
           title: JSON.stringify(res)
         })
       }
+    })
+  },
+  cancel(){
+    this.setData({
+      show: false
     })
   }
 })

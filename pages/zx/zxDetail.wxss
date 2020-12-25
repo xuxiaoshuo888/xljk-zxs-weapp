@@ -29,11 +29,11 @@
 }
 
 .info-item-left {
-  flex: 0 0 170rpx;
+  flex: 1 1 170rpx;
 }
 
 .info-item-right {
-  flex: 1 1 auto;
+  flex: 0 0 auto;
 }
 
 .info-img {

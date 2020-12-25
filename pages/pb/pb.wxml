@@ -55,14 +55,25 @@
 	</view>
 	<van-popup show="{{ show }}" round bind:close="onClose" custom-style="{{style}}">
 		<view style="padding:30rpx;position:relative;height:100%;box-sizing:border-box;">
-			<view style="padding:20px 5px;"> 咨询时间：{{currentItem.rq}} {{currentItem.starttime}} ~ {{currentItem.endtime}}
+			<view style="padding:20px 5px;">
+				<view class="sss">咨询时间</view>
+				<view class="sss" style="padding:10px;">
+					{{currentItem.rq}} {{currentItem.starttime}} ~ {{currentItem.endtime}}
+				</view>
 			</view>
 			<view>
-				<van-field value="{{ yy }}" bind:input="ipt" label="请假原因" type="textarea" placeholder="请输入请假原因" autosize
-					border="{{ false }}" />
-			</view>
-			<view style="text-align:center;padding:20px 0;position: absolute;bottom: 0;left: 10px;right: 10px">
-				<van-button bindtap="tijiao" size="large" round type="primary">提交</van-button>
+				<view style="padding:20px 5px;">
+					<view class="sss">请假原因</view>
+					<van-field value="{{ yy }}" bind:input="ipt" label="" type="textarea" style="font-size:14px;" placeholder="请输入请假原因"
+						autosize="{{autosize}}" border="{{ false }}" />
+				</view>
+				<view>
+
+				</view>
+				<view class="modal-btn-area" style="text-align:center;padding:20px 0;position: absolute;bottom: 0;left: 10px;right: 10px">
+					<van-button class="modal-btn-area-btn" style="margin-right:10px;" bindtap="tijiao" size="large" round type="primary">提交</van-button>
+					<van-button class="modal-btn-area-btn" bindtap="cancel" size="large" round plain type="primary">取消</van-button>
+				</view>
 			</view>
 		</view>
 

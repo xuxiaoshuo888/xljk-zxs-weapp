@@ -139,7 +139,7 @@
 				<view class="info-item-right">{{fzinfo.zpjjqk || '暂无数据'}}</view>
 			</view>
 
-			<view class="recd-item-title">如来访者暂时无法安排初谈，请填写以下内容</view>
+			<view class="recd-item-title">暂未安排初谈，填以下内容</view>
 			<view class="info-item">
 				<view class="info-item-left">无法安排初谈原因：</view>
 				<view class="info-item-right">{{fzinfo.wfapyy || '暂无数据'}}</view>

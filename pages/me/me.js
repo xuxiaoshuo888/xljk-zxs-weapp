@@ -90,6 +90,7 @@ Page({
       confirmColor: 'confirmColor',
       content: '您确认解绑?',
       showCancel: true,
+      confirmColor:'#32B67A',
       title: '提示',
       success: (res) => {
         if(res.confirm){
