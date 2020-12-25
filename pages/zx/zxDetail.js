@@ -114,7 +114,9 @@ Page({
         if (res.data.errcode === '0') {
           _this.setData({
             dto: res.data.dto,
-            list: res.data.list
+            list: res.data.list,
+            zxrq: res.data.dto.rota.rq,
+            zxsj: res.data.dto.rota.starttime + '-' + res.data.dto.rota.endtime
           })
           let zxlx=''
           _this.data.zxlxList.forEach(item=>{
